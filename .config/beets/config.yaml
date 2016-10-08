@@ -1,0 +1,37 @@
+# Global options
+library: ~/.beets/data/library.db
+directory: ~/Musiques
+plugins: chroma embedart fetchart lastgenre mbsync replaygain play missing inline ftintitle fromfilename web
+asciify_paths: yes
+per_disc_numbering: yes
+
+# Importer Options
+import:
+    move: yes
+    log: ~/.beets/logs
+    languages:
+      - fr
+
+# Path Format Configuration
+paths:
+    default: $albumartist/$album%aunique{}/$disc_and_track $title
+    singleton: Divers/$artist/$title
+    comp: $album%aunique{}/$disc_and_track $title
+    albumtype:soundtrack: Soundtracks/$album/$disc_and_track $title
+
+
+# Replaygain plugin conf
+replaygain:
+    backend: gstreamer
+
+# Play plugin conf
+play:
+    command: /usr/bin/vlc
+
+# Inline plugin conf
+item_fields:
+    disc_and_track: u'%02i-%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)
+
+# FtInTitle plugin conf
+ftintitle:
+    format: (feat. {0})
