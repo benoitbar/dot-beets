@@ -19,6 +19,9 @@ paths:
     comp: $album%aunique{}/$disc_and_track $title
     albumtype:soundtrack: Soundtracks/$album/$disc_and_track $title
 
+# Embedart plugin conf
+embedart:
+    remove_art_file: yes
 
 # Replaygain plugin conf
 replaygain:
@@ -35,3 +38,8 @@ item_fields:
 # FtInTitle plugin conf
 ftintitle:
     format: (feat. {0})
+
+# Lastgenre plugin conf
+lastgenre:
+    canonical: yes
+    whitelist: ~/.beets/whitelist.yaml
